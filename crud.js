@@ -22,6 +22,8 @@ app.post("/users", async (req, res) => {
 app.get("/users", async (req, res) => {
   try {
     const users = await User.find();
+    console.log("user",user);
+    
     res.json(users);
   } catch (err) {
     res.status(500).json({ error: err.message });
